@@ -1,268 +1,288 @@
 import { Project, Experience, ArchitectureLog, SkillCategory } from '../types';
 
+
 export const PERSONAL_INFO = {
-  name: 'Rendy Andrian',
-  initials: 'RA',
-  role: 'Senior Software & Mobile Architect',
-  shortBio: 'Engineering robust distributed frontends, offline-first mobile systems, and mathematically disciplined digital architectures for forward-leaning ventures.',
-  availability: 'Available for Q2 2026 Engagement',
-  availabilityPill: 'Q2 2026 Direct',
-  location: 'Jakarta, ID (UTC+7)',
-  yearsExperience: '5Y+',
-  experienceCount: '5+',
-  productionApps: '24+',
-  uptime: '99.9%',
-  productionStacks: '10+',
-  email: 'rendy@andrian.dev',
-  whatsapp: '+62 812 3456 7890',
-  whatsappUrl: 'https://wa.me/6281234567890',
-  github: 'https://github.com/rendyandrian',
-  linkedin: 'https://linkedin.com/in/rendyandrian',
-  instagram: 'https://instagram.com',
-  readcv: 'https://read.cv/rendyandrian',
-  avatarImage: 'https://lh3.googleusercontent.com/aida/AEtjO1WKaJdcXSuyz9kGM_j7Gu_XfHJjJg3YY1_iwD6HIss4fKXutnaotOpeeZtidh46aWSfGCTP-7kvxEQEZCvcpXO967c6Tyz71DmJRIomHGeJFGLLl7YAbcT6HNrlb3gdx_HuXYIOnTtr-BE37x5U5Vmwl-V5GLzqEdRpSxnVI1at67v4P2lxyjJyuR194ZgIuk-RV3Dmlr65_SxqWV_QKvJuQgmDQyXyVyYfFn24e0D_KRwycxDWPo3DSWq6',
-  workspaceImage: 'https://lh3.googleusercontent.com/aida/AEtjO1WGE5a7ohPB8H6ZRipiTx-jvjSBFAgMUft8VLj3RnnkSUyfwcASX-U2i2_xptIU_6F9lX9AnQMBVgBe3ZwlcQS6I-xaBvINqCZ7kG41-oSIUZjsZelmCZershgQZEu3MmDnU6l6TBrTuwYyfYKXqm8AHTG1dhqYevLfvqDr4N4qcm2pvVYhKMxEwwRchvfIZPgYCnaXutJqdaUjTfiyPvn80O_FtzW115On6FoEgvpvh0jDfsz6S45isEO5',
-  primaryStacks: 'Flutter / React / Next.js',
+  name: 'Davi Sabilissalim',
+  initials: 'DS',
+  role: 'Mobile Application Developer',
+
+  shortBio:
+    'Lulusan Teknik Informatika dari Universitas Yudharta Pasuruan dengan pengalaman belajar dan mengembangkan aplikasi selama 3–4 tahun. Berfokus pada pengembangan aplikasi mobile, pengembangan full-stack, serta membangun solusi digital yang praktis dan bermanfaat menggunakan Flutter, Dart, PHP, dan teknologi web modern.',
+  availability: 'Fresh Graduate | Open to Opportunities',
+  availabilityPill: 'Fresh Graduate',
+
+  location: 'Pasuruan, Indonesia',
+
+  // Use verified statistics only.
+  yearsExperience: '3–4Y',
+  experienceCount: '—',
+  productionApps: 'Published',
+  uptime: '—',
+  productionStacks: '—',
+
+  email: 'davisabilissalimuyp@gmail.com',
+
+  whatsapp: '+6281333154747',
+  whatsappUrl: 'https://wa.me/6281333154747',
+
+  github: 'https://github.com/Billyuu',
+  linkedin:
+    'https://www.linkedin.com/in/davi-sabilissalim-790a752b6/',
+  instagram: 'https://instagram.com/dv.sblslm_',
+
+  // Link CV online (kosongkan jika belum punya)
+  readcv: '/CV.Davi_Sabilissalim.pdf',
+
+  // Foto profil
+  avatarImage: '/billy.png',
+
+  // Foto ruang kerja atau proyek
+  workspaceImage: '/wp.jpg',
+
+  primaryStacks: 'Flutter / Dart / PHP / JavaScript / React',
 };
+
+
 
 export const PROJECTS: Project[] = [
   {
-    id: 'ar-petshop',
+    id: 'musrenyuk',
     caseStudyNum: 'CASE STUDY 01',
-    domain: 'MOBILE ARCHITECTURE',
-    title: 'AR Petshop Attendance Management System',
+    domain: 'MOBILE APPLICATION / DECISION SUPPORT SYSTEM',
+    title: 'Musrenyuk — Village Development Proposal App',
     description:
-      'Designed and implemented an offline-first mobile attendance pipeline featuring SQLite differential replication, micro-calendar bookings, and multi-tenant pet groomer schedules. Integrated strict location verification to curb fraudulent clock-ins.',
+      'A thesis project developed to support village development planning through a mobile application. Residents can submit proposals for physical and non-physical development, while administrators review submissions and manage their status.',
     fullBreakdown:
-      'Designed for extreme real-world network turbulence across distributed animal care facilities. When pet groomers clock in inside basements or remote facilities without cellular connectivity, a local SQLite queue journals cryptographic clock-in payloads with differential vector timestamps. Upon signal restoration, peer-to-peer reconciliation resolves clock drift within 350ms.',
+      'Musrenyuk connects community members and village administrators in the development planning process. Administrators can review proposals, evaluate priorities using the Analytical Hierarchy Process (AHP), and update each proposal status to In Progress, Approved, Rejected, Postponed, or Implemented.',
     architectureHighlights: [
-      'Zero-data-loss differential delta queue with cryptographic SHA-256 local receipts',
-      'Geofencing triangulation with dual-frequency GPS and mock-location anti-spoof checks',
-      'Optimistic state updates rendered instantaneously on 120Hz Flutter canvas',
-      'Battery-efficient background wake locks synchronized to shift transition windows',
+      'Mobile application for submitting village development proposals',
+      'Administrative interface for reviewing and managing proposals',
+      'Analytical Hierarchy Process (AHP) for proposal prioritization',
+      'Proposal status management throughout the review process',
+      'Full-stack development involving mobile, backend, and database components',
     ],
-    metrics: [
-      {
-        label: 'SYNCHRONIZATION',
-        value: '< 350ms',
-        subtext: 'Deterministic peer sync',
-      },
-      {
-        label: 'CRASH RATE',
-        value: '< 0.02%',
-        subtext: 'Across 18,000+ sessions',
-      },
+    metrics: [],
+    tags: [
+      'Flutter',
+      'Dart',
+      'Laravel',
+      'PHP',
+      'MySQL',
+      'JavaScript',
+      'HTML',
+      'CSS',
+      'AHP',
     ],
-    tags: ['Flutter', 'Dart', 'SQLite Vector Sync', 'REST API', 'Geofencing'],
-    image:
-      'https://lh3.googleusercontent.com/aida/AEtjO1X7p-9NcboEgsl0KsdBUf89rS0Dvw2UqTfjA9uDVdXOeRrNbjsrCFkqhrT7MrM85KUq82zQ8rmRyzn9xcR7VVDkkCrBOOUNp9JjUAYU5w8bYehy8hHlv4Zapl-si4D2AkWYkUjBCnRGPzuLvwm9Ni8GkVGGBonTxI-JpVTPBSzMt5enqMOK3SWyNySChDbQqLg4kJd6OZVsPXAfdk5fkLHXxgdIU_QXd_01CYAIUO9wEg7Curf-0R9irI5i',
-    actionText: 'View Architecture Breakdown',
+    image: '/Musrenyukk.png',
+    actionText: 'Explore Project Details',
   },
   {
-    id: 'bku-platform',
+    id: 'cashier-app',
     caseStudyNum: 'CASE STUDY 02',
-    domain: 'ENTERPRISE SAAS',
-    title: 'BKU Operational Enterprise Platform',
+    domain: 'APPLICATION DEVELOPMENT',
+    title: 'Cashier Application',
     description:
-      'Engineered high-concurrency ledger reconciliation dashboard servicing over $42M in quarterly transactions. Created a composable micro-frontend system allowing cross-functional financial audit teams to customize visualization widgets in real-time.',
+      'A cashier application developed as part of the developer’s project experience. Further details about its features, implementation, and technology stack are to be added.',
     fullBreakdown:
-      'Built for enterprise financial auditors processing massive ledger exports. The architecture leverages Module Federation with asynchronous micro-app isolation so audit modules operate independently without bundling overhead. Heavy transaction tables employ windowed DOM virtualization capable of butter-smooth 60fps scrolling across 50,000 active entries.',
-    architectureHighlights: [
-      'Micro-frontend runtime with isolated memory sandboxes to prevent memory leaks',
-      'Canvas and Web Worker accelerated aggregation pipeline for multi-currency recalculations',
-      'Strict TypeScript invariant checking across OpenAPI generated schema endpoints',
-      'Role-based multi-tier audit trail with immutable snapshot diffing',
-    ],
-    metrics: [
-      {
-        label: 'RENDER SPEED',
-        value: '60 FPS',
-        subtext: 'Virtualized 50k rows',
-      },
-      {
-        label: 'AUDIT THROUGHPUT',
-        value: '+320%',
-        subtext: 'Faster verification runs',
-      },
-    ],
-    tags: ['React 18', 'Microfrontends', 'TypeScript', 'Tailwind CSS', 'Web Workers'],
-    image:
-      'https://lh3.googleusercontent.com/aida/AEtjO1XyWQMgk9tVfVzby7lupEzKvoEWv4GexEkiRib0wHpas3cvRjw3tZgj8kFofFjS1GWPYbFfytfoyV0r0rdrHQIL4Z0wiipMEQ4aFppygxZcuYLee0Muzd3-fXavShEs3EgtHM4SmdvnPft4cYYonGPumuwvkxk0NTEpnQKyL2xyElTRrou64iqLcqShHr7AnIxHSNx_wMA6cM6ZQmHk9V-gn1E9hciTyLwJhnJ3AyUrxTujz6nHSgYmktY',
-    actionText: 'Explore Design System Architecture',
-  },
-  {
-    id: 'libat-telehealth',
-    caseStudyNum: 'CASE STUDY 03',
-    domain: 'DIGITAL HEALTH',
-    title: 'Libat Mobile Telehealth & Medicine Logistics',
-    description:
-      'Architected end-to-end encrypted medical dispatch application. Built cross-platform mobile patient records with local hardware keychain storage, dynamic queue management for prescription delivery, and secure telehealth appointment channels.',
-    fullBreakdown:
-      'Engineered to meet rigorous medical regulatory standards. Patient consultations stream over peer-to-peer WebRTC channels backed by turn servers with end-to-end SRTP encryption. Sensitive medical histories are protected via Android Keystore and iOS Secure Enclave with biometric challenge verification.',
-    architectureHighlights: [
-      'Hardware-level encryption for at-rest medical records via Secure Enclave',
-      'Low-latency WebRTC consultation engine with dynamic adaptive bitrate fallback',
-      'Dynamic dispatch algorithm optimizing courier cold-chain pharmaceutical routes',
-      'Zero-knowledge compliance audit logging for HIPAA & national medical records law',
-    ],
-    metrics: [
-      {
-        label: 'COMPLIANCE',
-        value: 'HIPAA/AES-256',
-        subtext: 'Hardware-backed vaults',
-      },
-      {
-        label: 'MONTHLY ACTIVE',
-        value: '45,000+',
-        subtext: 'Active patient logins',
-      },
-    ],
-    tags: ['Flutter', 'Kotlin', 'WebRTC', 'Secure Enclave', 'AES-256'],
-    image:
-      'https://lh3.googleusercontent.com/aida/AEtjO1WyfnLMDxbl0ir5bnRh3mJHsS0KjajNTBJCSWqsFuByr2UJXysibx4PXG3o306Ro2mpnUWKLpdIbQp74Rejf9f9IUq2KubAFh3H5kxZ4qXCumrSnIHwIFt_h5DlgSANZnEkbO4g8sQV49lhQ1bDDcfvvGcNa3qRoEjwF3Ai5oKTh8DlQaJkkkDxlEtL4sbksCPSGgjHOQb3mr1xuKHrjvWrluGm2ouSZLGQvxeLzSS9zlTwaDE9WgN1fBpP',
-    actionText: 'Read Healthcare Protocol Case',
-  },
-  {
-    id: 'trisantara-portal',
-    caseStudyNum: 'CASE STUDY 04',
-    domain: 'EDGE WEB PLATFORM',
-    title: 'Trisantara Corporate Engineering Portal',
-    description:
-      'Built ultra-fast, zero-JS-payload corporate showcase using Astro and Tailwind CSS. Implemented edge-rendered internationalization, automated content pipelines via headless CMS, and scored perfect 100/100 across all Google Lighthouse metrics.',
-    fullBreakdown:
-      'An architectural manifesto on hyper-optimized web performance. By stripping default client-side JavaScript execution down to isolated interactive islands, page hydration overhead was eradicated. Assets and edge workers cache HTML snapshots across global edge nodes, serving global visitors with sub-400ms First Contentful Paint.',
-    architectureHighlights: [
-      'Strict Zero-JS default payload with selective progressive hydration',
-      'Edge-based geo-routing delivering language localization with zero runtime redirects',
-      'Automated asset compilation pipeline minimizing critical path CSS to < 14KB',
-      'Flawless 100/100 Core Web Vitals across Desktop and Mobile device profiles',
-    ],
-    metrics: [
-      {
-        label: 'LIGHTHOUSE SCORE',
-        value: '100 / 100',
-        subtext: 'Performance & Accessibility',
-      },
-      {
-        label: 'FIRST CONTENTFUL',
-        value: '0.4 sec',
-        subtext: 'Global edge distribution',
-      },
-    ],
-    tags: ['Astro 4.0', 'Tailwind CSS', 'Edge Workers', 'Headless CMS', 'Lighthouse 100'],
-    image:
-      'https://lh3.googleusercontent.com/aida/AEtjO1VFWwrlb5efrXOSQq2GE9Pn_ClnT_OWMW7YngQ4Y-i42SM5U8Cw5VkVl7tToNsRIb-YptZbEA4Mmkc30YC60QW4ro6t514TYAG8FVGLZbpiO9VSn4odRnXlFecx1mlRkUgLbiiMd2fsDlRBJVCVRedBaQ4LFaQpngZaHhrf_ZmLj8liI0F-Ie98t6zfnYKlaunnCvHBTwpcmF6jircuKheqeRTQOfOTZ7YeySZiGtRZhNeuiKBdT07i1MyM',
-    actionText: 'View Performance Benchmarks',
+      'This project demonstrates experience in application development. Specific functionality, technical architecture, and implementation details have not yet been documented.',
+    architectureHighlights: [],
+    metrics: [],
+    tags: ['Application Development'],
+    image: '/bycafe.png',
+    actionText: 'Explore Project Details',
   },
 ];
 
+
 export const CAPABILITIES: SkillCategory[] = [
   {
-    category: 'Mobile Ecosystem',
+    category: 'Pengembangan Aplikasi Mobile',
     icon: 'smartphone',
     skills: [
-      { name: 'Flutter Engine', description: 'Cross-platform native compilation, custom render objects, and Skia/Impeller optimization.' },
-      { name: 'Dart', description: 'Strong static typing, asynchronous streams, isolates, and ahead-of-time (AOT) compilation.' },
-      { name: 'Kotlin / Swift Bridges', description: 'Platform channels, native hardware interop, sensors, and low-level background threads.' },
-      { name: 'Offline SQLite Sync', description: 'Conflict-free replicated data types (CRDTs), vector clocks, and local caching.' },
-      { name: 'Biometric Auth', description: 'Android BiometricPrompt, iOS FaceID/TouchID, Secure Enclave cryptographic keys.' },
+      {
+        name: 'Flutter',
+        description:
+          'Framework untuk membangun aplikasi mobile Android dan iOS menggunakan satu basis kode.',
+      },
+      {
+        name: 'Dart',
+        description:
+          'Bahasa pemrograman yang digunakan untuk mengembangkan aplikasi menggunakan Flutter.',
+      },
+      {
+        name: 'Mobile Application Development',
+        description:
+          'Pengalaman mengembangkan aplikasi mobile melalui proyek kuliah, proyek pribadi, dan proyek skripsi.',
+      },
     ],
   },
   {
-    category: 'Web & Microfrontends',
+    category: 'Pengembangan Website',
     icon: 'web',
     skills: [
-      { name: 'React 19', description: 'Server Components, optimistic UI hooks, concurrent rendering, and compiler optimization.' },
-      { name: 'Next.js App Router', description: 'Edge runtimes, streaming SSR, parallel routes, and zero-bundle server actions.' },
-      { name: 'TypeScript Strict', description: 'Nominal types, template literal types, AST analyzers, and strict null safety.' },
-      { name: 'Astro SSG', description: 'Zero-JS by default, islands architecture, and edge-rendered internationalization.' },
-      { name: 'Tailwind Engine', description: 'Design tokens, mathematical grid scales, fluid typography, and sub-pixel precision.' },
+      {
+        name: 'PHP',
+        description:
+          'Bahasa pemrograman sisi server untuk membangun aplikasi dan sistem berbasis web.',
+      },
+      {
+        name: 'Laravel',
+        description:
+          'Framework PHP yang digunakan untuk mengembangkan backend dan aplikasi web.',
+      },
+      {
+        name: 'JavaScript',
+        description:
+          'Bahasa pemrograman untuk menambahkan fungsi dan interaksi pada website.',
+      },
+      {
+        name: 'HTML & CSS',
+        description:
+          'Teknologi dasar untuk menyusun struktur dan mengatur tampilan halaman website.',
+      },
+      {
+        name: 'Bootstrap',
+        description:
+          'Framework CSS untuk membantu membuat tampilan website yang responsif.',
+      },
+      {
+        name: 'React',
+        description:
+          'Library JavaScript untuk membangun antarmuka pengguna yang interaktif.',
+      },
     ],
   },
   {
-    category: 'Services & Cloud',
+    category: 'Database & Integrasi Sistem',
     icon: 'database',
     skills: [
-      { name: 'Node.js / Express', description: 'Non-blocking I/O event loops, streaming responses, and resilient middleware.' },
-      { name: 'PostgreSQL / Supabase', description: 'Row-level security, relational schemas, indexing strategies, and JSONB operators.' },
-      { name: 'Laravel API', description: 'RESTful architectures, queue workers, job dispatches, and Eloquent ORM tuning.' },
-      { name: 'GraphQL', description: 'Federated schema stitching, dataloader N+1 mitigation, and strict query cost limits.' },
-      { name: 'Docker / CI/CD', description: 'Multi-stage container builds, reproducible environments, and automated test pipelines.' },
+      {
+        name: 'MySQL',
+        description:
+          'Database relasional untuk menyimpan, mengelola, dan mengambil data aplikasi.',
+      },
+      {
+        name: 'Firebase',
+        description:
+          'Platform yang menyediakan layanan backend untuk mendukung pengembangan aplikasi.',
+      },
+      {
+        name: 'API Integration',
+        description:
+          'Menghubungkan aplikasi dengan layanan atau sistem lain melalui API.',
+      },
+      {
+        name: 'Full-Stack Development',
+        description:
+          'Pengembangan aplikasi yang mencakup bagian frontend, backend, dan pengelolaan database.',
+      },
+    ],
+  },
+  {
+    category: 'Desain & Alat Pengembangan',
+    icon: 'palette',
+    skills: [
+      {
+        name: 'Figma',
+        description:
+          'Alat untuk merancang antarmuka dan membuat desain awal aplikasi atau website.',
+      },
+      {
+        name: 'Git & GitHub',
+        description:
+          'Alat untuk mengelola versi kode dan menyimpan repositori proyek.',
+      },
+      {
+        name: 'Visual Studio Code',
+        description:
+          'Editor kode yang digunakan untuk membantu proses pengembangan aplikasi dan website.',
+      },
+      {
+        name: 'Android Studio',
+        description:
+          'Lingkungan pengembangan untuk mendukung pengerjaan aplikasi Android.',
+      },
     ],
   },
 ];
+
 
 export const EXPERIENCES: Experience[] = [
   {
     id: 'exp-1',
-    period: '2024 — PRESENT',
-    company: 'Studio Synthetix',
-    role: 'Lead Software Engineer',
-    locationType: 'Jakarta / Remote',
+    period: 'Proyek Skripsi',
+    company: 'Musrenyuk',
+    role: 'Mobile Application Developer / Full-Stack Developer',
+    locationType: 'Proyek Akademik',
     description:
-      'Spearhead architectural standards across multi-platform client applications. Designed distributed state synchronization primitives for mobile apps, cutting cold-boot loading times by 48%. Managed a squad of 7 engineers with strict code review and automated CI pipelines.',
+      'Mengembangkan Musrenyuk, aplikasi untuk membantu warga mengajukan usulan pembangunan desa. Aplikasi ini mendukung proses pengajuan usulan pembangunan fisik maupun nonfisik, pengelolaan usulan oleh admin, serta penentuan prioritas menggunakan metode Analytical Hierarchy Process (AHP).',
     achievements: [
-      'Engineered universal microfrontend blueprint adopted across 3 separate product verticals',
-      'Cut cold-boot startup overhead from 1.8s to 930ms across heterogeneous Android devices',
-      'Mentored and guided 7 senior and mid-level engineers with weekly architectural brownbags',
+      'Mengembangkan aplikasi mobile menggunakan Flutter dan Dart',
+      'Membangun bagian backend menggunakan Laravel dan PHP',
+      'Menggunakan MySQL untuk pengelolaan data aplikasi',
+      'Mengimplementasikan metode AHP untuk membantu menentukan prioritas usulan pembangunan',
+      'Mempublikasikan aplikasi Musrenyuk di Google Play Store',
     ],
-    tags: ['Microfrontends', 'Flutter Engine', 'Next.js', 'Turborepo', 'CI/CD'],
+    tags: ['Flutter', 'Dart', 'Laravel', 'PHP', 'MySQL', 'AHP'],
   },
   {
     id: 'exp-2',
-    period: '2022 — 2024',
-    company: 'Artha Digital',
-    role: 'Senior Mobile & Web Engineer',
-    locationType: 'Hybrid',
+    period: 'MSIB Batch 7',
+    company: 'LearningX',
+    role: 'Mobile Application Development',
+    locationType: 'Program Pengembangan Kompetensi',
     description:
-      'Led the mobile engineering squad delivering fintech payment and attendance tracking systems. Authored cross-platform encryption modules and reduced memory footprint by 35% through custom bitmap rendering caches.',
+      'Mengikuti program MSIB Batch 7 melalui LearningX dengan fokus pada pengembangan aplikasi mobile. Program ini menjadi bagian dari proses pembelajaran dan pengembangan keterampilan di bidang pemrograman aplikasi.',
     achievements: [
-      'Delivered offline-first cryptographic signature module handling $1.2M daily transactions',
-      'Refactored legacy memory leaks, trimming Android baseline RAM usage by 35%',
-      'Integrated biometric token storage adhering to ISO/IEC 27001 compliance standards',
+      'Mempelajari pengembangan aplikasi mobile',
+      'Mengerjakan proyek akhir program',
+      'Mengembangkan pemahaman tentang proses pembuatan aplikasi',
     ],
-    tags: ['Dart', 'React Native & Flutter', 'PostgreSQL', 'GraphQL', 'Fintech'],
+    tags: ['Mobile Development', 'Flutter', 'Dart'],
   },
   {
     id: 'exp-3',
-    period: '2021 — 2022',
-    company: 'Nusantara Tech Labs',
-    role: 'Frontend Engineer',
-    locationType: 'On-site',
+    period: 'Pengalaman Freelance',
+    company: 'Proyek Website',
+    role: 'Web Developer',
+    locationType: 'Freelance',
     description:
-      'Developed high-traffic e-commerce web applications and interactive landing experiences. Initiated company-wide design tokens library, standardizing UI development velocity across 4 cross-functional squads.',
+      'Memiliki pengalaman mengerjakan proyek website secara freelance. Pengalaman ini membantu mengembangkan keterampilan dalam pembuatan website dan penerapan teknologi web sesuai kebutuhan proyek.',
     achievements: [
-      'Created shared core UI token system boosting component reusability by 65%',
-      'Improved Google Core Web Vitals to 98+ on primary e-commerce product landing hubs',
-      'Implemented automated regression testing with Jest, preventing deployment regressions',
+      'Mengerjakan proyek website berdasarkan kebutuhan yang diberikan',
+      'Mengembangkan keterampilan pemrograman web melalui proyek nyata',
     ],
-    tags: ['React', 'TypeScript', 'Design Tokens', 'Jest', 'Responsive UI'],
+    tags: ['PHP', 'HTML', 'CSS', 'JavaScript'],
   },
 ];
 
 export const ARCHITECTURE_LOGS: ArchitectureLog[] = [
   {
     id: 'log-1',
-    version: 'v26.4',
-    quote: '"Great systems design is subtraction until only the unavoidable remains."',
+    version: 'PRINSIP 01',
+    quote:
+      '"Aplikasi yang baik tidak hanya berjalan, tetapi juga membantu menyelesaikan masalah."',
     explanation:
-      'Every interface transition, every asynchronous queue, and every SQL query is evaluated against latency budgets and ergonomic simplicity.',
-    author: 'Rendy Andrian Notebook',
+      'Pengembangan aplikasi dimulai dengan memahami kebutuhan pengguna dan merancang fitur yang benar-benar bermanfaat, seperti pada aplikasi Musrenyuk.',
+    author: 'Prinsip Pengembangan Saya',
   },
   {
     id: 'log-2',
-    version: 'v26.2',
-    quote: '"Offline is not an error state; it is a standard condition of real-world computing."',
+    version: 'PRINSIP 02',
+    quote:
+      '"Kode yang terstruktur memudahkan pengembangan dan pemeliharaan aplikasi."',
     explanation:
-      'Mobile devices navigate basements, elevators, and transit tunnels. Applications must maintain operational parity irrespective of connectivity status.',
-    author: 'Rendy Andrian Notebook',
+      'Pemisahan bagian aplikasi mobile, backend, dan database membantu menjaga struktur pengembangan agar lebih mudah dipahami dan dikembangkan.',
+    author: 'Prinsip Pengembangan Saya',
   },
   {
     id: 'log-3',
-    version: 'v25.9',
-    quote: '"Type safety is the ultimate guardrail for cognitive bandwidth."',
+    version: 'PRINSIP 03',
+    quote:
+      '"Belajar dan mencoba adalah bagian dari proses menjadi developer."',
     explanation:
-      'Strict compiler contracts prevent whole classes of runtime anomalies, freeing engineering teams to focus on customer-facing sensory craftsmanship.',
-    author: 'Rendy Andrian Notebook',
+      'Melalui proyek akademik, program pengembangan kompetensi, dan pengalaman freelance, saya terus belajar menerapkan keterampilan pemrograman untuk membangun solusi digital.',
+    author: 'Prinsip Pengembangan Saya',
   },
 ];
+

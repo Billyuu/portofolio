@@ -1,10 +1,25 @@
+
 import React, { useState } from 'react';
 import { PERSONAL_INFO, CAPABILITIES } from '../data/portfolioData';
-import { Download, CheckCircle2, Smartphone, Globe, Database, Info, X } from 'lucide-react';
+import {
+  CheckCircle2,
+  Smartphone,
+  Globe,
+  Database,
+  Info,
+  X,
+  ArrowUpRight,
+  Mail,
+} from 'lucide-react';
 
 export const PhilosophySection: React.FC = () => {
-  const [selectedSkill, setSelectedSkill] = useState<{ name: string; description: string } | null>(null);
-  const [showDossierModal, setShowDossierModal] = useState(false);
+  const [selectedSkill, setSelectedSkill] = useState<{
+    name: string;
+    description: string;
+  } | null>(null);
+
+  const [showProfileModal, setShowProfileModal] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
 
   const getIconForCategory = (icon: string) => {
     switch (icon) {
@@ -19,143 +34,192 @@ export const PhilosophySection: React.FC = () => {
     }
   };
 
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(PERSONAL_INFO.email);
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2000);
+    } catch {
+      window.prompt('Salin alamat email berikut:', PERSONAL_INFO.email);
+    }
+  };
+
   return (
-    <section id="philosophy" className="w-full bg-white text-black py-16 lg:py-24">
+    <section
+      id="archive"
+      className="w-full bg-white text-black py-16 lg:py-24"
+    >
       <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 space-y-12">
-        {/* Section Header */}
+
+        {/* Judul Bagian */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-zinc-200">
           <div className="space-y-2 max-w-2xl">
             <span className="font-mono text-xs uppercase tracking-widest text-zinc-500 font-semibold">
-              01 // Architectural Standards
+              04 // PROFIL DAN KEAHLIAN
             </span>
+
             <h2 className="font-poppins font-bold text-3xl sm:text-4xl text-black tracking-tight">
-              Thoughtful Architecture, Deliberate Code.
+              Mengenal Saya dan Keahlian Saya.
             </h2>
+
+            <p className="font-poppins text-sm sm:text-base text-zinc-600 leading-relaxed mt-3">
+              Ringkasan perjalanan belajar, pengalaman proyek, dan
+              teknologi yang saya gunakan untuk mengembangkan aplikasi.
+            </p>
           </div>
+
           <button
             type="button"
-            onClick={() => setShowDossierModal(true)}
-            id="dossier-modal-trigger-btn"
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-black hover:text-zinc-600 transition-colors cursor-pointer self-start md:self-auto py-1"
+            onClick={() => setShowProfileModal(true)}
+            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-black hover:text-zinc-600 transition-colors self-start md:self-auto py-2"
           >
-            <span>Request Technical Dossier</span>
-            <Download className="w-4 h-4" />
+            <span>Lihat Profil</span>
+            <ArrowUpRight className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Philosophy Statement & Numbers Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Bio Card */}
+        {/* Profil Singkat */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+
           <div className="lg:col-span-7 bg-zinc-50 border border-zinc-200 p-6 sm:p-8 rounded-3xl space-y-6">
-            <h3 className="font-poppins font-semibold text-xl text-black leading-snug">
-              Engineering scale across platforms without compromising sensory craft.
-            </h3>
+            <div className="space-y-3">
+              <span className="font-mono text-xs uppercase tracking-wider text-zinc-500">
+                PROFIL SAYA
+              </span>
+
+              <h3 className="font-poppins font-semibold text-xl sm:text-2xl text-black leading-snug">
+                Mengembangkan solusi digital yang bermanfaat melalui
+                aplikasi mobile dan website.
+              </h3>
+            </div>
+
             <p className="font-poppins font-normal text-zinc-700 leading-relaxed text-sm sm:text-base">
-              I specialize in designing modular micro-frontend ecosystems and robust mobile architectures built to endure unpredictable networking conditions. By synthesizing strict mathematical layout rules, strict type contracts, and zero-latency caching pipelines, I create products that feel effortless to the user and resilient to the business.
+              {PERSONAL_INFO.shortBio}
             </p>
+
             <div className="p-4 rounded-2xl bg-white border border-zinc-200 flex items-start gap-4 shadow-sm">
               <CheckCircle2 className="w-6 h-6 text-black shrink-0 mt-0.5" />
+
               <div>
-                <p className="font-poppins font-semibold text-xs uppercase tracking-wide text-black">
-                  Core Architectural Invariant
+                <p className="font-poppins font-semibold text-sm text-black">
+                  Fokus Pengembangan
                 </p>
-                <p className="font-poppins text-xs text-zinc-600 mt-1 leading-relaxed">
-                  Zero client-side cascading failures: decoupled fault domains, deterministic SQLite synchronization, and 100/100 Core Web Vital budgets.
+
+                <p className="font-poppins text-xs sm:text-sm text-zinc-600 mt-1 leading-relaxed">
+                  Pengembangan aplikasi mobile menggunakan Flutter,
+                  pengembangan backend, pengelolaan database, dan
+                  pembuatan website sesuai kebutuhan pengguna.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* 4 Stat Metric Tiles */}
-          <div className="lg:col-span-5 grid grid-cols-2 gap-4">
+          {/* Ringkasan Informasi */}
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+
             <div className="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 flex flex-col justify-between hover:border-black transition-colors">
               <span className="font-mono text-[11px] uppercase tracking-wider text-zinc-500 font-medium">
-                EXPERIENCE
+                PENDIDIKAN
               </span>
-              <div className="my-4">
-                <span className="font-poppins font-bold text-4xl sm:text-5xl text-black tracking-tight">
-                  {PERSONAL_INFO.experienceCount}
+
+              <div className="my-5">
+                <span className="font-poppins font-bold text-2xl sm:text-3xl text-black tracking-tight">
+                  S1
                 </span>
               </div>
+
               <p className="font-poppins text-xs text-zinc-700 font-medium">
-                Years in Mobile &amp; Web Systems
+                Teknik Informatika
               </p>
             </div>
 
             <div className="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 flex flex-col justify-between hover:border-black transition-colors">
               <span className="font-mono text-[11px] uppercase tracking-wider text-zinc-500 font-medium">
-                DELIVERY
+                PROYEK UNGGULAN
               </span>
-              <div className="my-4">
-                <span className="font-poppins font-bold text-4xl sm:text-5xl text-black tracking-tight">
-                  {PERSONAL_INFO.productionApps}
+
+              <div className="my-5">
+                <span className="font-poppins font-bold text-2xl sm:text-3xl text-black tracking-tight">
+                  Musrenyuk
                 </span>
               </div>
+
               <p className="font-poppins text-xs text-zinc-700 font-medium">
-                Production Apps Shipped
+                Aplikasi usulan pembangunan desa
               </p>
             </div>
 
             <div className="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 flex flex-col justify-between hover:border-black transition-colors">
               <span className="font-mono text-[11px] uppercase tracking-wider text-zinc-500 font-medium">
-                RELIABILITY
+                BIDANG UTAMA
               </span>
-              <div className="my-4">
-                <span className="font-poppins font-bold text-4xl sm:text-5xl text-black tracking-tight">
-                  {PERSONAL_INFO.uptime}
-                </span>
+
+              <div className="my-5">
+                <Smartphone className="w-8 h-8 text-black" />
               </div>
+
               <p className="font-poppins text-xs text-zinc-700 font-medium">
-                Uptime Metric Track Record
+                Pengembangan Aplikasi Mobile
               </p>
             </div>
 
             <div className="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 flex flex-col justify-between hover:border-black transition-colors">
               <span className="font-mono text-[11px] uppercase tracking-wider text-zinc-500 font-medium">
-                TOOLING
+                LOKASI
               </span>
-              <div className="my-4">
-                <span className="font-poppins font-bold text-4xl sm:text-5xl text-black tracking-tight">
-                  {PERSONAL_INFO.productionStacks}
+
+              <div className="my-5">
+                <span className="font-poppins font-bold text-2xl sm:text-3xl text-black tracking-tight">
+                  Pasuruan
                 </span>
               </div>
+
               <p className="font-poppins text-xs text-zinc-700 font-medium">
-                Production Stacks Mastered
+                Jawa Timur, Indonesia
               </p>
             </div>
           </div>
         </div>
 
-        {/* Technical Capability Matrix */}
+        {/* Daftar Keahlian */}
         <div className="bg-zinc-50 border border-zinc-200 p-6 sm:p-8 rounded-3xl space-y-6">
-          <div className="flex items-center justify-between pb-2 border-b border-zinc-200">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-4 border-b border-zinc-200">
             <div>
-              <p className="font-poppins font-bold text-sm uppercase tracking-wider text-black">
-                Technical Capability Matrix
-              </p>
-              <p className="text-xs text-zinc-500 font-normal">
-                Click any competency to inspect production architectural usage
+              <h3 className="font-poppins font-bold text-base sm:text-lg text-black">
+                Keahlian dan Teknologi
+              </h3>
+
+              <p className="text-xs sm:text-sm text-zinc-500 font-normal mt-1">
+                Pilih teknologi untuk melihat penjelasan singkatnya.
               </p>
             </div>
-            <span className="font-mono text-[11px] text-zinc-500">UPDATED 2026</span>
+
+            <span className="font-mono text-[11px] text-zinc-500">
+              DAFTAR KEAHLIAN
+            </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-1">
             {CAPABILITIES.map((cat) => (
               <div key={cat.category} className="space-y-3">
-                <span className="font-mono text-xs uppercase tracking-wider text-black font-bold flex items-center gap-1.5">
+                <h4 className="font-mono text-xs uppercase tracking-wider text-black font-bold flex items-center gap-2">
                   {getIconForCategory(cat.icon)}
                   {cat.category}
-                </span>
+                </h4>
+
                 <div className="flex flex-wrap gap-2">
                   {cat.skills.map((skill) => {
                     const isSelected = selectedSkill?.name === skill.name;
+
                     return (
                       <button
                         key={skill.name}
                         type="button"
-                        onClick={() => setSelectedSkill(isSelected ? null : skill)}
-                        className={`px-3 py-1.5 rounded-full border text-xs font-poppins font-medium transition-all text-left ${
+                        onClick={() =>
+                          setSelectedSkill(isSelected ? null : skill)
+                        }
+                        aria-pressed={isSelected}
+                        className={`px-3 py-2 rounded-full border text-xs font-poppins font-medium transition-all text-left ${
                           isSelected
                             ? 'bg-black text-white border-black shadow-sm'
                             : 'border-zinc-300 bg-white text-black hover:border-black'
@@ -170,22 +234,28 @@ export const PhilosophySection: React.FC = () => {
             ))}
           </div>
 
-          {/* Interactive Skill Detail Callout */}
+          {/* Penjelasan Keahlian Terpilih */}
           {selectedSkill && (
-            <div className="p-4 rounded-2xl bg-white border-2 border-black animate-in fade-in duration-200 flex items-start justify-between gap-4">
+            <div className="p-4 rounded-2xl bg-white border border-black animate-in fade-in duration-200 flex items-start justify-between gap-4">
               <div>
                 <span className="font-mono text-[11px] uppercase tracking-wider text-zinc-500 font-semibold">
-                  Competency Invariant // {selectedSkill.name}
+                  PENJELASAN KEAHLIAN
                 </span>
-                <p className="text-sm font-poppins text-black font-medium mt-1">
+
+                <h4 className="font-poppins font-semibold text-sm text-black mt-1">
+                  {selectedSkill.name}
+                </h4>
+
+                <p className="text-sm font-poppins text-zinc-700 mt-1 leading-relaxed">
                   {selectedSkill.description}
                 </p>
               </div>
+
               <button
                 type="button"
                 onClick={() => setSelectedSkill(null)}
                 className="text-zinc-500 hover:text-black p-1"
-                aria-label="Close competency detail"
+                aria-label="Tutup penjelasan keahlian"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -194,65 +264,91 @@ export const PhilosophySection: React.FC = () => {
         </div>
       </div>
 
-      {/* Technical Dossier Modal */}
-      {showDossierModal && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white text-black max-w-lg w-full rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 border border-zinc-300 animate-in zoom-in-95 duration-150">
+      {/* Modal Profil */}
+      {showProfileModal && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto"
+          onClick={() => setShowProfileModal(false)}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="profile-modal-title"
+            className="bg-white text-black max-w-lg w-full rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 border border-zinc-300 animate-in zoom-in-95 duration-150 my-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
               <span className="font-mono text-xs uppercase tracking-widest text-zinc-500 font-bold">
-                DOCUMENT TRANSMISSION
+                PROFIL DEVELOPER
               </span>
+
               <button
                 type="button"
-                onClick={() => setShowDossierModal(false)}
-                className="p-1 rounded-full hover:bg-zinc-100 text-zinc-600 hover:text-black transition-colors"
+                onClick={() => setShowProfileModal(false)}
+                className="p-2 rounded-full hover:bg-zinc-100 text-zinc-600 hover:text-black transition-colors"
+                aria-label="Tutup profil"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             <div className="space-y-3">
-              <h4 className="font-poppins font-bold text-xl text-black">
-                Rendy Andrian — Systems Architecture Dossier (2026)
-              </h4>
-              <p className="font-poppins text-xs text-zinc-600 leading-relaxed">
-                Includes comprehensive engineering invariants, peer-reviewed offline sync schemas, micro-frontend module federation contracts, and benchmarks across 24+ deployed production apps.
+              <h3
+                id="profile-modal-title"
+                className="font-poppins font-bold text-xl sm:text-2xl text-black"
+              >
+                {PERSONAL_INFO.name}
+              </h3>
+
+              <p className="font-poppins text-sm text-zinc-600">
+                {PERSONAL_INFO.role}
+              </p>
+
+              <p className="font-poppins text-sm text-zinc-700 leading-relaxed">
+                {PERSONAL_INFO.shortBio}
               </p>
             </div>
 
-            <div className="bg-zinc-100 p-4 rounded-2xl space-y-2 text-xs font-mono">
-              <div className="flex justify-between">
-                <span className="text-zinc-500">FORMAT:</span>
-                <span className="font-semibold text-black">PDF / Cryptographic Bundle</span>
+            <div className="bg-zinc-100 p-4 rounded-2xl space-y-3 text-sm">
+              <div>
+                <p className="text-zinc-500 text-xs mb-1">LOKASI</p>
+                <p className="font-medium">{PERSONAL_INFO.location}</p>
               </div>
-              <div className="flex justify-between">
-                <span className="text-zinc-500">SIGNATURE:</span>
-                <span className="font-semibold text-black">SHA256: 9e4f..8b21</span>
+
+              <div>
+                <p className="text-zinc-500 text-xs mb-1">TEKNOLOGI UTAMA</p>
+                <p className="font-medium">{PERSONAL_INFO.primaryStacks}</p>
               </div>
-              <div className="flex justify-between">
-                <span className="text-zinc-500">DIRECT EMAIL:</span>
-                <span className="font-semibold text-black">{PERSONAL_INFO.email}</span>
+
+              <div>
+                <p className="text-zinc-500 text-xs mb-1">STATUS</p>
+                <p className="font-medium">{PERSONAL_INFO.availability}</p>
+              </div>
+
+              <div>
+                <p className="text-zinc-500 text-xs mb-1">EMAIL</p>
+                <p className="font-medium break-all">
+                  {PERSONAL_INFO.email}
+                </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
               <a
                 href="#contact"
-                onClick={() => setShowDossierModal(false)}
-                className="flex-1 py-3 px-4 rounded-xl bg-black text-white text-center font-poppins font-semibold text-xs hover:bg-zinc-800 transition-colors"
+                onClick={() => setShowProfileModal(false)}
+                className="w-full flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-black text-white text-center font-poppins font-semibold text-xs hover:bg-zinc-800 transition-colors"
               >
-                Direct Inquiry via Contact
+                <Mail className="w-4 h-4" />
+                Hubungi Saya
               </a>
+
               <button
                 type="button"
-                onClick={() => {
-                  navigator.clipboard.writeText(PERSONAL_INFO.email);
-                  alert(`Email address copied (${PERSONAL_INFO.email}). Dossier inquiry ready!`);
-                  setShowDossierModal(false);
-                }}
-                className="py-3 px-4 rounded-xl border border-zinc-300 text-black font-poppins font-semibold text-xs hover:bg-zinc-100 transition-colors"
+                onClick={handleCopyEmail}
+                className="w-full sm:w-auto py-3 px-4 rounded-xl border border-zinc-300 text-black font-poppins font-semibold text-xs hover:bg-zinc-100 transition-colors"
               >
-                Copy Email
+                {copiedEmail ? 'Email Disalin' : 'Salin Email'}
               </button>
             </div>
           </div>
