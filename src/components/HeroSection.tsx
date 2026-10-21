@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { ChevronDown } from 'lucide-react';
 import { PERSONAL_INFO, PROJECTS } from '../data/portfolioData';
 import {
   ArrowDown,
@@ -55,14 +56,17 @@ export const HeroSection: React.FC = () => {
               {PERSONAL_INFO.role}
             </p>
 
+
             <h1 className="font-poppins font-bold text-4xl sm:text-6xl lg:text-[4.5rem] leading-[1.05] tracking-[-0.03em] text-white">
               HALO, SAYA
               <br className="hidden sm:inline" />{' '}
+              DAVI SA
               <span className="text-white underline decoration-white decoration-2 underline-offset-8">
-                DAVI
-              </span>{' '}
-              SABILISSALIM.
+                BILI
+              </span>
+              SSALIM.
             </h1>
+
           </div>
 
           <p className="font-poppins font-normal text-base sm:text-lg lg:text-xl text-zinc-400 leading-relaxed max-w-xl">
@@ -77,29 +81,21 @@ export const HeroSection: React.FC = () => {
               className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full bg-white text-black font-poppins font-semibold text-sm tracking-wide shadow-md hover:bg-zinc-200 active:scale-95 transition-all"
             >
               <span>Lihat Proyek</span>
-              <ArrowDown className="w-4 h-4" />
+              <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" />
             </a>
+
 
             {PERSONAL_INFO.readcv && (
               <a
                 href={PERSONAL_INFO.readcv}
                 download
                 id="hero-download-cv-btn"
-                className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full border border-zinc-700 bg-zinc-900/60 text-white font-poppins font-semibold text-sm tracking-wide hover:bg-zinc-800 hover:border-zinc-500 active:scale-95 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full border border-zinc-700 bg-transparent text-white font-poppins font-medium text-sm tracking-wide hover:bg-zinc-900 hover:border-zinc-500 transition-all active:scale-95"
               >
                 <Download className="w-4 h-4" />
                 <span>Unduh CV</span>
               </a>
             )}
-
-            <a
-              href="#archive"
-              id="hero-architecture-btn"
-              className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full border border-zinc-700 bg-transparent text-white font-poppins font-medium text-sm tracking-wide hover:bg-zinc-900 hover:border-zinc-500 transition-all"
-            >
-              <span>Keahlian Saya</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
           </div>
 
           {/* Tautan Media Sosial */}
@@ -146,13 +142,25 @@ export const HeroSection: React.FC = () => {
         <div className="lg:col-span-5 relative mt-4 lg:mt-0">
           <div className="border border-zinc-800 bg-zinc-950 p-4 rounded-[2rem] shadow-2xl flex flex-col gap-4">
             <div className="relative overflow-hidden rounded-[1.5rem] aspect-[3/4] bg-zinc-900 border border-zinc-800/80 group">
+
               {PERSONAL_INFO.avatarImage && (
-                <img
-                  alt={`Foto profil ${PERSONAL_INFO.name}`}
-                  className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out grayscale contrast-125"
-                  src={PERSONAL_INFO.avatarImage}
-                />
+                <>
+                  {/* Foto formal: tampilan default */}
+                  <img
+                    alt={`Foto profil ${PERSONAL_INFO.name}`}
+                    className="absolute inset-0 w-full h-full object-cover object-center grayscale contrast-125 transition-opacity duration-300 group-hover:opacity-0"
+                    src={PERSONAL_INFO.avatarImage}
+                  />
+
+                  {/* Foto ekspresi: muncul saat kursor diarahkan */}
+                  <img
+                    alt={`${PERSONAL_INFO.name} — Dammm Broo!`}
+                    className="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    src="/damm.png"
+                  />
+                </>
               )}
+
 
               <div className="absolute top-3 left-3 bg-black/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 border border-zinc-800">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />

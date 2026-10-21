@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { PROJECTS } from '../data/portfolioData';
 import { Project } from '../types';
-import { ArrowRight, Image as ImageIcon } from 'lucide-react';
+import { ArrowRight, Image as ImageIcon, ExternalLink, } from 'lucide-react';
 import { ArchitectureModal } from './ArchitectureModal';
 
 export const WorkSection: React.FC = () => {
@@ -108,8 +108,10 @@ export const WorkSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Tombol Detail */}
-                <div className="pt-2">
+
+                {/* Tombol Aksi Proyek */}
+                <div className="pt-2 flex flex-wrap items-center gap-4">
+                  {/* Tombol Detail Proyek */}
                   <button
                     type="button"
                     onClick={() => setSelectedProject(project)}
@@ -118,7 +120,22 @@ export const WorkSection: React.FC = () => {
                     <span>{project.actionText || 'Lihat Detail Proyek'}</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
+
+                  {/* Tombol Google Play */}
+                  {project.playStoreUrl && (
+                    <a
+                      href={project.playStoreUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(event) => event.stopPropagation()}
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-zinc-700 bg-zinc-900/60 text-white font-poppins font-medium text-sm hover:bg-zinc-800 hover:border-zinc-500 active:scale-95 transition-all"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span>View on Google Play</span>
+                    </a>
+                  )}
                 </div>
+
               </div>
 
               {/* Gambar atau Placeholder Proyek */}

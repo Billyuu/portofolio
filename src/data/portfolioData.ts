@@ -7,7 +7,7 @@ export const PERSONAL_INFO = {
   role: 'Mobile Application Developer',
 
   shortBio:
-    'Lulusan Teknik Informatika dari Universitas Yudharta Pasuruan dengan pengalaman belajar dan mengembangkan aplikasi selama 3–4 tahun. Berfokus pada pengembangan aplikasi mobile, pengembangan full-stack, serta membangun solusi digital yang praktis dan bermanfaat menggunakan Flutter, Dart, PHP, dan teknologi web modern.',
+    'Lulusan Teknik Informatika dari Universitas Yudharta Pasuruan dengan pengalaman belajar dan mengembangkan aplikasi selama 3–4 tahun. Berfokus pada pengembangan aplikasi mobile, pengembangan full-stack, serta membangun solusi digital yang praktis dan bermanfaat menggunakan Flutter, Dart, PHP, React dan teknologi web modern.',
   availability: 'Fresh Graduate | Open to Opportunities',
   availabilityPill: 'Fresh Graduate',
 
@@ -31,7 +31,7 @@ export const PERSONAL_INFO = {
   instagram: 'https://instagram.com/dv.sblslm_',
 
   // Link CV online (kosongkan jika belum punya)
-  readcv: '/CV.Davi_Sabilissalim.pdf',
+  readcv: '/CV.Davi_Sabilissalimnew.pdf',
 
   // Foto profil
   avatarImage: '/billy.png',
@@ -71,26 +71,42 @@ export const PROJECTS: Project[] = [
       'JavaScript',
       'HTML',
       'CSS',
-      'AHP',
+      'AHP', 'Figma',
+
     ],
     image: '/Musrenyukk.png',
     actionText: 'Explore Project Details',
+    playStoreUrl:
+      'https://play.google.com/store/apps/details?id=com.bily.musrenbang',
+
   },
+
+
   {
     id: 'cashier-app',
     caseStudyNum: 'CASE STUDY 02',
-    domain: 'APPLICATION DEVELOPMENT',
-    title: 'Cashier Application',
+    domain: 'MOBILE APPLICATION DEVELOPMENT',
+    title: 'ByCafe — Cashier Application',
     description:
-      'A cashier application developed as part of the developer’s project experience. Further details about its features, implementation, and technology stack are to be added.',
+      'A cashier application developed using Flutter and Dart, with Firebase as its backend service. The project focuses on building a mobile-based cashier solution to support transaction management and streamline daily café operations.',
     fullBreakdown:
-      'This project demonstrates experience in application development. Specific functionality, technical architecture, and implementation details have not yet been documented.',
-    architectureHighlights: [],
+      'ByCafe is a mobile cashier application built with Flutter and Dart. Firebase is used to support backend functionality and data management. The project demonstrates the implementation of cross-platform mobile development and cloud-based services for a café cashier system.',
+    architectureHighlights: [
+      'Cross-platform mobile application developed with Flutter',
+      'Dart for application logic and user interface development',
+      'Firebase integration for backend services and data management',
+      'Mobile-based cashier application for café operations',
+    ],
     metrics: [],
-    tags: ['Application Development'],
+    tags: [
+      'Flutter',
+      'Dart',
+      'Firebase', 'Figma',
+    ],
     image: '/bycafe.png',
     actionText: 'Explore Project Details',
   },
+
 ];
 
 
