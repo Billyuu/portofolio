@@ -141,31 +141,21 @@ export const HeroSection: React.FC = () => {
         {/* Foto Profil */}
         <div className="lg:col-span-5 relative mt-4 lg:mt-0">
           <div className="border border-zinc-800 bg-zinc-950 p-4 rounded-[2rem] shadow-2xl flex flex-col gap-4">
-            <div className="relative overflow-hidden rounded-[1.5rem] aspect-[3/4] bg-zinc-900 border border-zinc-800/80 group">
+            <div className="relative overflow-hidden rounded-[1.5rem] aspect-[3/4] bg-zinc-900 border border-zinc-800">
 
               {PERSONAL_INFO.avatarImage && (
-                <>
-                  {/* Foto formal: tampilan default */}
-                  <img
-                    alt={`Foto profil ${PERSONAL_INFO.name}`}
-                    className="absolute inset-0 w-full h-full object-cover object-center grayscale contrast-125 transition-opacity duration-300 group-hover:opacity-0"
-                    src={PERSONAL_INFO.avatarImage}
-                  />
-
-                  {/* Foto ekspresi: muncul saat kursor diarahkan */}
-                  <img
-                    alt={`${PERSONAL_INFO.name} — Dammm Broo!`}
-                    className="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                    src="/damm.png"
-                  />
-                </>
+                <img
+                  alt={`Foto profil ${PERSONAL_INFO.name}`}
+                  className="absolute inset-0 w-full h-full object-cover object-center grayscale contrast-125"
+                  src={PERSONAL_INFO.avatarImage}
+                />
               )}
 
 
               <div className="absolute top-3 left-3 bg-black/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 border border-zinc-800">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span className="font-mono text-[11px] uppercase tracking-wider text-zinc-200">
-                  Pengembang Aplikasi
+                  Mobile Application
                 </span>
               </div>
 

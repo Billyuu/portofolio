@@ -2,6 +2,7 @@ export interface Metric {
   label: string;
   value: string;
   subtext: string;
+  
 }
 
 export interface Project {
@@ -18,6 +19,7 @@ export interface Project {
   actionText: string;
   githubUrl?: string;
   liveUrl?: string;
+  playStoreUrl?: string;
 }
 
 export interface Experience {

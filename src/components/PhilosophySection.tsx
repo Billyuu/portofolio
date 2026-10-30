@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { PERSONAL_INFO, CAPABILITIES } from '../data/portfolioData';
 import {
@@ -10,6 +9,9 @@ import {
   X,
   ArrowUpRight,
   Mail,
+  GraduationCap,
+  MapPin,
+  Code2,
 } from 'lucide-react';
 
 export const PhilosophySection: React.FC = () => {
@@ -24,13 +26,15 @@ export const PhilosophySection: React.FC = () => {
   const getIconForCategory = (icon: string) => {
     switch (icon) {
       case 'smartphone':
-        return <Smartphone className="w-4 h-4 text-black" />;
+        return <Smartphone className="h-4 w-4" aria-hidden="true" />;
       case 'web':
-        return <Globe className="w-4 h-4 text-black" />;
+        return <Globe className="h-4 w-4" aria-hidden="true" />;
       case 'database':
-        return <Database className="w-4 h-4 text-black" />;
+        return <Database className="h-4 w-4" aria-hidden="true" />;
+      case 'palette':
+        return <Code2 className="h-4 w-4" aria-hidden="true" />;
       default:
-        return <Info className="w-4 h-4 text-black" />;
+        return <Info className="h-4 w-4" aria-hidden="true" />;
     }
   };
 
@@ -38,174 +42,205 @@ export const PhilosophySection: React.FC = () => {
     try {
       await navigator.clipboard.writeText(PERSONAL_INFO.email);
       setCopiedEmail(true);
-      setTimeout(() => setCopiedEmail(false), 2000);
+      window.setTimeout(() => setCopiedEmail(false), 2000);
     } catch {
       window.prompt('Salin alamat email berikut:', PERSONAL_INFO.email);
     }
   };
 
+  const statCardClass =
+    'group flex min-h-[190px] flex-col justify-between rounded-2xl border border-zinc-200 bg-white p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-zinc-400 hover:shadow-md sm:p-6';
+
   return (
     <section
       id="archive"
-      className="w-full bg-white text-black py-16 lg:py-24"
+      className="w-full bg-white py-14 text-black sm:py-16 lg:py-20"
     >
-      <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 space-y-12">
-
-        {/* Judul Bagian */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-zinc-200">
-          <div className="space-y-2 max-w-2xl">
-            <span className="font-mono text-xs uppercase tracking-widest text-zinc-500 font-semibold">
-              04 // PROFIL DAN KEAHLIAN
-            </span>
-
-            <h2 className="font-poppins font-bold text-3xl sm:text-4xl text-black tracking-tight">
+      <div className="mx-auto w-full max-w-[1280px] space-y-10 px-4 sm:px-6 lg:space-y-12 lg:px-12">
+        {/* Section heading */}
+        <div className="flex flex-col gap-5 border-b border-zinc-200 pb-6 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <div className="mb-3 flex items-center gap-3">
+              <span className="h-px w-8 bg-zinc-900" />
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                04 / Profil dan Keahlian
+              </span>
+            </div>
+            <h2 className="font-poppins text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-[2.75rem]">
               Mengenal Saya dan Keahlian Saya.
             </h2>
-
-            <p className="font-poppins text-sm sm:text-base text-zinc-600 leading-relaxed mt-3">
-              Ringkasan perjalanan belajar, pengalaman proyek, dan
-              teknologi yang saya gunakan untuk mengembangkan aplikasi.
+            <p className="mt-4 max-w-xl font-poppins text-sm leading-7 text-zinc-600 sm:text-base">
+              Ringkasan perjalanan belajar, pengalaman proyek, dan teknologi
+              yang saya gunakan untuk mengembangkan aplikasi.
             </p>
           </div>
 
           <button
             type="button"
             onClick={() => setShowProfileModal(true)}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-black hover:text-zinc-600 transition-colors self-start md:self-auto py-2"
+            className="inline-flex w-fit items-center gap-2 rounded-full border border-zinc-300 px-4 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-wider text-zinc-800 transition hover:border-black hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2"
           >
-            <span>Lihat Profil</span>
-            <ArrowUpRight className="w-4 h-4" />
+            Lihat Profil
+            <ArrowUpRight className="h-4 w-4" />
           </button>
         </div>
 
-        {/* Profil Singkat */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        {/* Profile and information cards */}
+        <div className="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-12 lg:gap-6">
+          <article className="flex flex-col rounded-3xl border border-zinc-200 bg-zinc-50 p-6 sm:p-8 lg:col-span-7 lg:p-9">
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
+              Profil Saya
+            </span>
 
-          <div className="lg:col-span-7 bg-zinc-50 border border-zinc-200 p-6 sm:p-8 rounded-3xl space-y-6">
-            <div className="space-y-3">
-              <span className="font-mono text-xs uppercase tracking-wider text-zinc-500">
-                PROFIL SAYA
-              </span>
+            <h3 className="mt-4 max-w-2xl font-poppins text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">
+              Mengembangkan solusi digital yang bermanfaat melalui aplikasi
+              mobile dan website.
+            </h3>
 
-              <h3 className="font-poppins font-semibold text-xl sm:text-2xl text-black leading-snug">
-                Mengembangkan solusi digital yang bermanfaat melalui
-                aplikasi mobile dan website.
-              </h3>
-            </div>
-
-            <p className="font-poppins font-normal text-zinc-700 leading-relaxed text-sm sm:text-base">
+            <p className="mt-5 font-poppins text-sm leading-7 text-zinc-600 sm:text-base">
               {PERSONAL_INFO.shortBio}
             </p>
 
-            <div className="p-4 rounded-2xl bg-white border border-zinc-200 flex items-start gap-4 shadow-sm">
-              <CheckCircle2 className="w-6 h-6 text-black shrink-0 mt-0.5" />
-
+            <div className="mt-7 flex items-start gap-4 rounded-2xl border border-zinc-200 bg-white p-4 sm:p-5">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-zinc-100">
+                <CheckCircle2 className="h-5 w-5 text-zinc-900" />
+              </div>
               <div>
-                <p className="font-poppins font-semibold text-sm text-black">
+                <p className="font-poppins text-sm font-semibold text-zinc-950">
                   Fokus Pengembangan
                 </p>
-
-                <p className="font-poppins text-xs sm:text-sm text-zinc-600 mt-1 leading-relaxed">
-                  Pengembangan aplikasi mobile menggunakan Flutter,
-                  pengembangan backend, pengelolaan database, dan
-                  pembuatan website sesuai kebutuhan pengguna.
+                <p className="mt-1.5 font-poppins text-sm leading-6 text-zinc-600">
+                  Pengembangan aplikasi mobile menggunakan Flutter, backend,
+                  pengelolaan database, dan pembuatan website sesuai kebutuhan
+                  pengguna.
                 </p>
               </div>
             </div>
-          </div>
 
-          {/* Ringkasan Informasi */}
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-            <div className="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 flex flex-col justify-between hover:border-black transition-colors">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-zinc-500 font-medium">
-                PENDIDIKAN
+            <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-zinc-200 pt-5">
+              <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-500">
+                Teknologi utama
               </span>
+              <span className="text-xs font-medium text-zinc-700">
+                {PERSONAL_INFO.primaryStacks}
+              </span>
+            </div>
+          </article>
 
-              <div className="my-5">
-                <span className="font-poppins font-bold text-2xl sm:text-3xl text-black tracking-tight">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-5">
+            <article className={statCardClass}>
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
+                  Pendidikan
+                </span>
+                <GraduationCap className="h-5 w-5 text-zinc-400 transition group-hover:text-black" />
+              </div>
+              <div className="mt-7">
+                <h3 className="font-poppins text-3xl font-bold tracking-tight sm:text-4xl">
                   S1
-                </span>
+                </h3>
+                <p className="mt-2 text-sm font-medium text-zinc-700">
+                  Teknik Informatika
+                </p>
+                <p className="mt-1 text-xs leading-5 text-zinc-500">
+                  Universitas Yudharta Pasuruan
+                </p>
               </div>
+            </article>
 
-              <p className="font-poppins text-xs text-zinc-700 font-medium">
-                Teknik Informatika
-              </p>
-            </div>
-
-            <div className="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 flex flex-col justify-between hover:border-black transition-colors">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-zinc-500 font-medium">
-                PROYEK UNGGULAN
-              </span>
-
-              <div className="my-5">
-                <span className="font-poppins font-bold text-2xl sm:text-3xl text-black tracking-tight">
+            <article className={statCardClass}>
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
+                  Proyek Unggulan
+                </span>
+                <ArrowUpRight className="h-5 w-5 text-zinc-400 transition group-hover:text-black" />
+              </div>
+              <div className="mt-7">
+                <h3 className="font-poppins text-2xl font-bold tracking-tight sm:text-3xl">
                   Musrenyuk
+                </h3>
+                <p className="mt-2 text-sm leading-5 text-zinc-600">
+                  Aplikasi usulan pembangunan desa
+                </p>
+              </div>
+            </article>
+
+            <article className={statCardClass}>
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
+                  Bidang Utama
                 </span>
+                <Smartphone className="h-5 w-5 text-zinc-400 transition group-hover:text-black" />
               </div>
-
-              <p className="font-poppins text-xs text-zinc-700 font-medium">
-                Aplikasi usulan pembangunan desa
-              </p>
-            </div>
-
-            <div className="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 flex flex-col justify-between hover:border-black transition-colors">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-zinc-500 font-medium">
-                BIDANG UTAMA
-              </span>
-
-              <div className="my-5">
-                <Smartphone className="w-8 h-8 text-black" />
+              <div className="mt-7">
+                <h3 className="font-poppins text-xl font-bold leading-snug tracking-tight sm:text-2xl">
+                  Mobile Development
+                </h3>
+                <p className="mt-2 text-sm leading-5 text-zinc-600">
+                  Pengembangan aplikasi mobile
+                </p>
               </div>
+            </article>
 
-              <p className="font-poppins text-xs text-zinc-700 font-medium">
-                Pengembangan Aplikasi Mobile
-              </p>
-            </div>
-
-            <div className="p-6 rounded-3xl bg-zinc-50 border border-zinc-200 flex flex-col justify-between hover:border-black transition-colors">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-zinc-500 font-medium">
-                LOKASI
-              </span>
-
-              <div className="my-5">
-                <span className="font-poppins font-bold text-2xl sm:text-3xl text-black tracking-tight">
+            <article className={statCardClass}>
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
+                  Lokasi
+                </span>
+                <MapPin className="h-5 w-5 text-zinc-400 transition group-hover:text-black" />
+              </div>
+              <div className="mt-7">
+                <h3 className="font-poppins text-3xl font-bold tracking-tight sm:text-4xl">
                   Pasuruan
-                </span>
+                </h3>
+                <p className="mt-2 text-sm text-zinc-600">
+                  Jawa Timur, Indonesia
+                </p>
               </div>
-
-              <p className="font-poppins text-xs text-zinc-700 font-medium">
-                Jawa Timur, Indonesia
-              </p>
-            </div>
+            </article>
           </div>
         </div>
 
-        {/* Daftar Keahlian */}
-        <div className="bg-zinc-50 border border-zinc-200 p-6 sm:p-8 rounded-3xl space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-4 border-b border-zinc-200">
+        {/* Skills */}
+        <section className="rounded-3xl border border-zinc-200 bg-zinc-50 p-6 sm:p-8 lg:p-9">
+          <div className="flex flex-col gap-3 border-b border-zinc-200 pb-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <h3 className="font-poppins font-bold text-base sm:text-lg text-black">
+              <div className="mb-2 flex items-center gap-2">
+                <Code2 className="h-4 w-4 text-zinc-500" />
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
+                  Technical Toolkit
+                </span>
+              </div>
+              <h3 className="font-poppins text-xl font-bold tracking-tight sm:text-2xl">
                 Keahlian dan Teknologi
               </h3>
-
-              <p className="text-xs sm:text-sm text-zinc-500 font-normal mt-1">
-                Pilih teknologi untuk melihat penjelasan singkatnya.
+              <p className="mt-2 text-sm leading-6 text-zinc-600">
+                Pilih teknologi untuk melihat penjelasan singkat dan
+                penggunaannya.
               </p>
             </div>
-
-            <span className="font-mono text-[11px] text-zinc-500">
-              DAFTAR KEAHLIAN
+            <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-500">
+              {CAPABILITIES.reduce((total, category) => total + category.skills.length, 0)}{' '}
+              keahlian terdaftar
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-1">
-            {CAPABILITIES.map((cat) => (
-              <div key={cat.category} className="space-y-3">
-                <h4 className="font-mono text-xs uppercase tracking-wider text-black font-bold flex items-center gap-2">
-                  {getIconForCategory(cat.icon)}
-                  {cat.category}
-                </h4>
+          <div className="grid grid-cols-1 gap-x-8 gap-y-8 pt-6 md:grid-cols-2 md:gap-y-9">
+            {CAPABILITIES.map((cat, index) => (
+              <div key={cat.category} className="min-w-0">
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-zinc-200 bg-white text-zinc-800">
+                    {getIconForCategory(cat.icon)}
+                  </div>
+                  <div>
+                    <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-400">
+                      Kategori {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <h4 className="font-poppins text-xs font-semibold leading-5 text-zinc-900 sm:text-sm">
+                      {cat.category}
+                    </h4>
+                  </div>
+                </div>
 
                 <div className="flex flex-wrap gap-2">
                   {cat.skills.map((skill) => {
@@ -219,10 +254,10 @@ export const PhilosophySection: React.FC = () => {
                           setSelectedSkill(isSelected ? null : skill)
                         }
                         aria-pressed={isSelected}
-                        className={`px-3 py-2 rounded-full border text-xs font-poppins font-medium transition-all text-left ${
+                        className={`rounded-full border px-3.5 py-2 text-left font-poppins text-xs font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 ${
                           isSelected
-                            ? 'bg-black text-white border-black shadow-sm'
-                            : 'border-zinc-300 bg-white text-black hover:border-black'
+                            ? 'border-black bg-black text-white shadow-sm'
+                            : 'border-zinc-200 bg-white text-zinc-700 hover:border-zinc-500 hover:text-black'
                         }`}
                       >
                         {skill.name}
@@ -234,119 +269,121 @@ export const PhilosophySection: React.FC = () => {
             ))}
           </div>
 
-          {/* Penjelasan Keahlian Terpilih */}
           {selectedSkill && (
-            <div className="p-4 rounded-2xl bg-white border border-black animate-in fade-in duration-200 flex items-start justify-between gap-4">
+            <div
+              className="mt-7 flex items-start justify-between gap-4 rounded-2xl border border-zinc-300 bg-white p-5 shadow-sm"
+              aria-live="polite"
+            >
               <div>
-                <span className="font-mono text-[11px] uppercase tracking-wider text-zinc-500 font-semibold">
-                  PENJELASAN KEAHLIAN
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
+                  Penjelasan Keahlian
                 </span>
-
-                <h4 className="font-poppins font-semibold text-sm text-black mt-1">
+                <h4 className="mt-2 font-poppins text-base font-semibold text-zinc-950">
                   {selectedSkill.name}
                 </h4>
-
-                <p className="text-sm font-poppins text-zinc-700 mt-1 leading-relaxed">
+                <p className="mt-2 max-w-3xl font-poppins text-sm leading-6 text-zinc-600">
                   {selectedSkill.description}
                 </p>
               </div>
-
               <button
                 type="button"
                 onClick={() => setSelectedSkill(null)}
-                className="text-zinc-500 hover:text-black p-1"
+                className="rounded-full p-2 text-zinc-500 transition hover:bg-zinc-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-zinc-400"
                 aria-label="Tutup penjelasan keahlian"
               >
-                <X className="w-4 h-4" />
+                <X className="h-4 w-4" />
               </button>
             </div>
           )}
-        </div>
+        </section>
       </div>
 
-      {/* Modal Profil */}
+      {/* Profile modal */}
       {showProfileModal && (
         <div
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto"
+          className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/70 p-4 backdrop-blur-sm"
           onClick={() => setShowProfileModal(false)}
         >
           <div
             role="dialog"
             aria-modal="true"
             aria-labelledby="profile-modal-title"
-            className="bg-white text-black max-w-lg w-full rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 border border-zinc-300 animate-in zoom-in-95 duration-150 my-auto"
-            onClick={(e) => e.stopPropagation()}
+            className="my-auto w-full max-w-lg space-y-6 rounded-3xl border border-zinc-200 bg-white p-6 text-black shadow-2xl sm:p-8"
+            onClick={(event) => event.stopPropagation()}
           >
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
-              <span className="font-mono text-xs uppercase tracking-widest text-zinc-500 font-bold">
-                PROFIL DEVELOPER
-              </span>
-
+            <div className="flex items-center justify-between border-b border-zinc-200 pb-4">
+              <div>
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
+                  Profil Developer
+                </span>
+                <h3
+                  id="profile-modal-title"
+                  className="mt-2 font-poppins text-xl font-bold sm:text-2xl"
+                >
+                  {PERSONAL_INFO.name}
+                </h3>
+              </div>
               <button
                 type="button"
                 onClick={() => setShowProfileModal(false)}
-                className="p-2 rounded-full hover:bg-zinc-100 text-zinc-600 hover:text-black transition-colors"
+                className="rounded-full p-2 text-zinc-500 transition hover:bg-zinc-100 hover:text-black"
                 aria-label="Tutup profil"
               >
-                <X className="w-5 h-5" />
+                <X className="h-5 w-5" />
               </button>
             </div>
 
             <div className="space-y-3">
-              <h3
-                id="profile-modal-title"
-                className="font-poppins font-bold text-xl sm:text-2xl text-black"
-              >
-                {PERSONAL_INFO.name}
-              </h3>
-
-              <p className="font-poppins text-sm text-zinc-600">
+              <p className="text-sm font-medium text-zinc-600">
                 {PERSONAL_INFO.role}
               </p>
-
-              <p className="font-poppins text-sm text-zinc-700 leading-relaxed">
+              <p className="font-poppins text-sm leading-7 text-zinc-700">
                 {PERSONAL_INFO.shortBio}
               </p>
             </div>
 
-            <div className="bg-zinc-100 p-4 rounded-2xl space-y-3 text-sm">
+            <div className="space-y-4 rounded-2xl bg-zinc-50 p-5 text-sm">
               <div>
-                <p className="text-zinc-500 text-xs mb-1">LOKASI</p>
+                <p className="mb-1 font-mono text-[10px] uppercase tracking-wider text-zinc-500">
+                  Lokasi
+                </p>
                 <p className="font-medium">{PERSONAL_INFO.location}</p>
               </div>
-
               <div>
-                <p className="text-zinc-500 text-xs mb-1">TEKNOLOGI UTAMA</p>
-                <p className="font-medium">{PERSONAL_INFO.primaryStacks}</p>
+                <p className="mb-1 font-mono text-[10px] uppercase tracking-wider text-zinc-500">
+                  Teknologi Utama
+                </p>
+                <p className="leading-6 text-zinc-700">
+                  {PERSONAL_INFO.primaryStacks}
+                </p>
               </div>
-
               <div>
-                <p className="text-zinc-500 text-xs mb-1">STATUS</p>
+                <p className="mb-1 font-mono text-[10px] uppercase tracking-wider text-zinc-500">
+                  Status
+                </p>
                 <p className="font-medium">{PERSONAL_INFO.availability}</p>
               </div>
-
               <div>
-                <p className="text-zinc-500 text-xs mb-1">EMAIL</p>
-                <p className="font-medium break-all">
-                  {PERSONAL_INFO.email}
+                <p className="mb-1 font-mono text-[10px] uppercase tracking-wider text-zinc-500">
+                  Email
                 </p>
+                <p className="break-all font-medium">{PERSONAL_INFO.email}</p>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+            <div className="flex flex-col gap-3 pt-1 sm:flex-row">
               <a
                 href="#contact"
                 onClick={() => setShowProfileModal(false)}
-                className="w-full flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-black text-white text-center font-poppins font-semibold text-xs hover:bg-zinc-800 transition-colors"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-black px-4 py-3 text-center font-poppins text-xs font-semibold text-white transition hover:bg-zinc-800"
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="h-4 w-4" />
                 Hubungi Saya
               </a>
-
               <button
                 type="button"
                 onClick={handleCopyEmail}
-                className="w-full sm:w-auto py-3 px-4 rounded-xl border border-zinc-300 text-black font-poppins font-semibold text-xs hover:bg-zinc-100 transition-colors"
+                className="rounded-xl border border-zinc-300 px-4 py-3 font-poppins text-xs font-semibold text-zinc-800 transition hover:bg-zinc-100"
               >
                 {copiedEmail ? 'Email Disalin' : 'Salin Email'}
               </button>
