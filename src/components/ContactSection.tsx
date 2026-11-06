@@ -57,10 +57,10 @@ export const ContactSection: React.FC = () => {
 
   return (
     <section
-      id="contact"
-      className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 pb-16 lg:pb-24"
-    >
-      <div className="bg-black border border-zinc-800 rounded-[2.5rem] p-6 sm:p-10 lg:p-16 shadow-[0_24px_50px_rgba(0,0,0,0.4)]">
+  id="contact"
+  className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 pt-30 pb-16 lg:pb-24"
+>
+      <div className="bg-black border border-zinc-800 rounded-[2.5rem] p-6 sm:p-10 lg:p-16 shadow-[0_24px_50px_rgba(0,0,0,0.4)] -mt-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
           {/* Informasi Kontak */}
