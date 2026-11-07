@@ -31,9 +31,9 @@ export const HeroSection: React.FC = () => {
           </span>
         </div>
 
-        <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-wider text-zinc-400">
+        {/* <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-wider text-zinc-400">
           <a href="#work" className="hover:text-white transition-colors">
-            Proyek ({String(PROJECTS.length).padStart(2, '0')})
+            Proyek 
           </a>
           <span className="text-zinc-700">/</span>
           <a href="#archive" className="hover:text-white transition-colors">
@@ -43,7 +43,7 @@ export const HeroSection: React.FC = () => {
           <a href="#contact" className="hover:text-white transition-colors">
             Kontak
           </a>
-        </div>
+        </div> */}
       </div>
 
       {/* Bagian Utama */}
@@ -165,7 +165,7 @@ export const HeroSection: React.FC = () => {
                     {PERSONAL_INFO.name}
                   </p>
                   <p className="font-mono text-[10px] text-zinc-400">
-                    Flutter • React • PHP
+                  Fullstack Developer•
                   </p>
                 </div>
 
@@ -177,7 +177,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Informasi Teknologi dan Status */}
-            <div className="grid grid-cols-2 gap-2 pt-1">
+            {/* <div className="grid grid-cols-2 gap-2 pt-1">
               <div className="p-2.5 rounded-xl border border-zinc-800/80 bg-zinc-900/60 flex flex-col justify-center min-w-0">
                 <span className="font-mono text-[10px] uppercase text-zinc-500 tracking-wider">
                   Teknologi
@@ -195,7 +195,7 @@ export const HeroSection: React.FC = () => {
                   {PERSONAL_INFO.availabilityPill}
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

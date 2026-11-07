@@ -36,10 +36,10 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
 
   const navItems = [
     { label: 'Beranda', href: '#hero', id: 'hero' },
+    { label: 'Keahlian', href: '#archive', id: 'archive' },
     { label: 'Proyek', href: '#work', id: 'work' },
     { label: 'Pengalaman', href: '#experience', id: 'experience' },
-    { label: 'Keahlian', href: '#archive', id: 'archive' },
-    { label: 'Kontak', href: '#contact', id: 'contact' },
+    // { label: 'Kontak', href: '#contact', id: 'contact' },
   ];
 
   return (

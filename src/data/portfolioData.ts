@@ -31,7 +31,7 @@ export const PERSONAL_INFO = {
   instagram: 'https://instagram.com/dv.sblslm_',
 
   // Link CV online (kosongkan jika belum punya)
-  readcv: '/CV.Davi_Sabilissalimnew.pdf',
+  readcv: '/CV.DAVISABILISSALIM.pdf',
 
   // Foto profil
   avatarImage: '/billy.png',
@@ -45,69 +45,74 @@ export const PERSONAL_INFO = {
 
 
 export const PROJECTS: Project[] = [
-  {
-    id: 'musrenyuk',
-    caseStudyNum: 'CASE STUDY 01',
-    domain: 'MOBILE APPLICATION / DECISION SUPPORT SYSTEM',
-    title: 'Musrenyuk — Village Development Proposal App',
-    description:
-      'A thesis project developed to support village development planning through a mobile application. Residents can submit proposals for physical and non-physical development, while administrators review submissions and manage their status.',
-    fullBreakdown:
-      'Musrenyuk connects community members and village administrators in the development planning process. Administrators can review proposals, evaluate priorities using the Analytical Hierarchy Process (AHP), and update each proposal status to In Progress, Approved, Rejected, Postponed, or Implemented.',
-    architectureHighlights: [
-      'Mobile application for submitting village development proposals',
-      'Administrative interface for reviewing and managing proposals',
-      'Analytical Hierarchy Process (AHP) for proposal prioritization',
-      'Proposal status management throughout the review process',
-      'Full-stack development involving mobile, backend, and database components',
-    ],
-    metrics: [],
-    tags: [
-      'Flutter',
-      'Dart',
-      'Laravel',
-      'PHP',
-      'MySQL',
-      'JavaScript',
-      'HTML',
-      'CSS',
-      'AHP', 'Figma',
+  
+{
+  id: 'musrenyuk',
+  caseStudyNum: 'STUDI KASUS 01',
+  domain: 'APLIKASI MOBILE / SISTEM PENDUKUNG KEPUTUSAN',
+  title: 'Musrenyuk — Aplikasi Usulan Pembangunan Desa',
+  description:
+    'Proyek Desa yang dikembangkan untuk mendukung perencanaan pembangunan desa melalui aplikasi mobile. Masyarakat dapat mengajukan usulan pembangunan fisik maupun nonfisik, sedangkan admin bertugas meninjau pengajuan dan mengelola status usulan.',
+  fullBreakdown:
+    'Musrenyuk menghubungkan masyarakat dan admin desa dalam proses perencanaan pembangunan. Admin dapat meninjau usulan, menentukan prioritas menggunakan metode Analytical Hierarchy Process (AHP), serta memperbarui status setiap usulan menjadi Sedang Diproses, Disetujui, Ditolak, Ditunda, atau Telah Dilaksanakan.',
+  architectureHighlights: [
+    'Aplikasi mobile untuk mengajukan usulan pembangunan desa',
+    'Antarmuka admin untuk meninjau dan mengelola usulan masyarakat',
+    'Penerapan metode Analytical Hierarchy Process (AHP) untuk menentukan prioritas usulan',
+    'Pengelolaan status usulan selama proses peninjauan',
+    'Pengembangan sistem secara menyeluruh meliputi aplikasi mobile, backend, dan database',
+  ],
+  metrics: [],
+  tags: [
+    'Flutter',
+    'Dart',
+    'Laravel',
+    'PHP',
+    'MySQL',
+    'JavaScript',
+    'HTML',
+    'CSS',
+    'AHP',
+    'Figma',
+  ],
+  image: '/Musrenyukk.png',
+  actionText: 'Lihat Detail Proyek',
+  playStoreUrl:
+    'https://play.google.com/store/apps/details?id=com.bily.musrenbang',
+},
 
-    ],
-    image: '/Musrenyukk.png',
-    actionText: 'Explore Project Details',
-    playStoreUrl:
-      'https://play.google.com/store/apps/details?id=com.bily.musrenbang',
-
-  },
 
 
-  {
-    id: 'cashier-app',
-    caseStudyNum: 'CASE STUDY 02',
-    domain: 'MOBILE APPLICATION DEVELOPMENT',
-    title: 'ByCafe — Cashier Application',
-    description:
-      'A cashier application developed using Flutter and Dart, with Firebase as its backend service. The project focuses on building a mobile-based cashier solution to support transaction management and streamline daily café operations.',
-    fullBreakdown:
-      'ByCafe is a mobile cashier application built with Flutter and Dart. Firebase is used to support backend functionality and data management. The project demonstrates the implementation of cross-platform mobile development and cloud-based services for a café cashier system.',
-    architectureHighlights: [
-      'Cross-platform mobile application developed with Flutter',
-      'Dart for application logic and user interface development',
-      'Firebase integration for backend services and data management',
-      'Mobile-based cashier application for café operations',
-    ],
-    metrics: [],
-    tags: [
-      'Flutter',
-      'Dart',
-      'Firebase', 'Figma',
-    ],
-    image: '/bycafe.png',
-    actionText: 'Explore Project Details',
-  },
+  
+{
+  id: 'cashier-app',
+  caseStudyNum: 'STUDI KASUS 02',
+  domain: 'PENGEMBANGAN APLIKASI MOBILE / SISTEM KASIR',
+  title: 'ByCafe — Aplikasi Kasir',
+  description:
+    'Aplikasi kasir berbasis mobile yang dikembangkan untuk mendukung kegiatan operasional ByCafe. Dibangun menggunakan Flutter dan Dart dengan Firebase sebagai layanan backend untuk membantu pengelolaan transaksi dan data operasional kafe.',
+  fullBreakdown:
+    'ByCafe merupakan aplikasi kasir yang dirancang untuk digunakan dalam operasional Cafe ByCafe. Aplikasi ini dikembangkan menggunakan Flutter dan Dart untuk membangun antarmuka serta fungsionalitas mobile, sedangkan Firebase dimanfaatkan sebagai layanan backend untuk mendukung pengelolaan data aplikasi.',
+  architectureHighlights: [
+    'Mengembangkan aplikasi kasir berbasis mobile menggunakan Flutter',
+    'Menggunakan Dart untuk implementasi logika aplikasi dan antarmuka pengguna',
+    'Mengintegrasikan Firebase sebagai layanan backend dan pengelolaan data',
+    'Menerapkan aplikasi untuk mendukung kegiatan operasional Cafe ByCafe',
+  ],
+  metrics: [],
+  tags: [
+    'Flutter',
+    'Dart',
+    'Firebase',
+    'Figma',
+  ],
+  image: '/bycafe.png',
+  actionText: 'Lihat Detail Proyek',
+},
+
 
 ];
+
 
 
 export const CAPABILITIES: SkillCategory[] = [
@@ -128,7 +133,7 @@ export const CAPABILITIES: SkillCategory[] = [
       {
         name: 'Mobile Application Development',
         description:
-          'Pengalaman mengembangkan aplikasi mobile melalui proyek kuliah, proyek pribadi, dan proyek skripsi.',
+          'Pengalaman mengembangkan aplikasi mobile melalui proyek akademik, proyek pribadi, dan proyek freelance.',
       },
     ],
   },
@@ -190,7 +195,28 @@ export const CAPABILITIES: SkillCategory[] = [
       {
         name: 'Full-Stack Development',
         description:
-          'Pengembangan aplikasi yang mencakup bagian frontend, backend, dan pengelolaan database.',
+          'Pengembangan aplikasi yang mencakup frontend, backend, dan pengelolaan database.',
+      },
+    ],
+  },
+  {
+    category: 'Internet of Things (IoT)',
+    icon: 'iot',
+    skills: [
+      {
+        name: 'ESP32',
+        description:
+          'Mikrokontroler yang digunakan dalam pengembangan perangkat IoT untuk membaca sensor dan mengendalikan perangkat elektronik.',
+      },
+      {
+        name: 'Arduino IDE',
+        description:
+          'Integrated Development Environment untuk menulis, mengompilasi, dan mengunggah program ke mikrokontroler.',
+      },
+      {
+        name: 'IoT System Integration',
+        description:
+          'Pengalaman mengintegrasikan perangkat penyiraman otomatis dan pendeteksi kesuburan tanah dengan sistem aplikasi.',
       },
     ],
   },
@@ -223,12 +249,13 @@ export const CAPABILITIES: SkillCategory[] = [
 ];
 
 
+
 export const EXPERIENCES: Experience[] = [
   {
     id: 'exp-1',
-    period: 'Proyek Skripsi',
+    period: 'Proyek Desa',
     company: 'Musrenyuk',
-    role: 'Mobile Application Developer / Full-Stack Developer',
+    role: 'Mobile Application Developer',
     locationType: 'Proyek Akademik',
     description:
       'Mengembangkan Musrenyuk, aplikasi untuk membantu warga mengajukan usulan pembangunan desa. Aplikasi ini mendukung proses pengajuan usulan pembangunan fisik maupun nonfisik, pengelolaan usulan oleh admin, serta penentuan prioritas menggunakan metode Analytical Hierarchy Process (AHP).',
@@ -256,49 +283,106 @@ export const EXPERIENCES: Experience[] = [
     ],
     tags: ['Mobile Development', 'Flutter', 'Dart'],
   },
-  {
-    id: 'exp-3',
-    period: 'Pengalaman Freelance',
-    company: 'Proyek Website',
-    role: 'Web Developer',
-    locationType: 'Freelance',
-    description:
-      'Memiliki pengalaman mengerjakan proyek website secara freelance. Pengalaman ini membantu mengembangkan keterampilan dalam pembuatan website dan penerapan teknologi web sesuai kebutuhan proyek.',
-    achievements: [
-      'Mengerjakan proyek website berdasarkan kebutuhan yang diberikan',
-      'Mengembangkan keterampilan pemrograman web melalui proyek nyata',
-    ],
-    tags: ['PHP', 'HTML', 'CSS', 'JavaScript'],
-  },
+  
+{
+  id: 'exp-4',
+  period: 'Pengalaman Organisasi',
+  company: 'HUMANIKA',
+  role: 'Wakil Ketua Himpunan Mahasiswa Teknik Informatika',
+  locationType: 'Organisasi Kemahasiswaan',
+  description:
+    'Menjabat sebagai Wakil Ketua Himpunan Mahasiswa Teknik Informatika (HUMANIKA), dengan tanggung jawab membantu ketua dalam mengoordinasikan jalannya organisasi, mendukung pelaksanaan program kerja, serta menjaga koordinasi dan komunikasi antaranggota.',
+  achievements: [
+    'Membantu ketua dalam menjalankan dan mengoordinasikan kegiatan organisasi',
+    'Berkoordinasi dengan pengurus dan anggota dalam pelaksanaan program kerja',
+    'Mendukung perencanaan dan evaluasi kegiatan himpunan',
+    'Membangun komunikasi dan kerja sama antaranggota organisasi',
+  ],
+  tags: [
+    'Leadership',
+    'Team Management',
+    'Communication',
+    'Organization',
+    'Teamwork',
+  ],
+},
+
+{
+  id: 'exp-3',
+  period: 'PPK Ormawa 2025',
+  company: 'Smart Village',
+  role: 'Web & IoT Developer',
+  locationType: 'Program Nasional',
+  description:
+    'Mengembangkan inovasi Smart Village melalui program greenhouse berbasis AI untuk pemberdayaan petani krisan di Desa Tutur. Berkontribusi dalam pengembangan sistem penyiraman otomatis dan alat pendeteksi kesuburan tanah berbasis AI yang terintegrasi dalam satu aplikasi, serta pengembangan website pemasaran bunga krisan dan website desa.',
+  achievements: [
+    'Mengembangkan aplikasi untuk monitoring dan kontrol sistem penyiraman tanaman otomatis',
+    'Berkontribusi dalam pengembangan alat pendeteksi kesuburan tanah berbasis AI menggunakan ESP32',
+    'Mengintegrasikan dua perangkat IoT dalam satu aplikasi',
+    'Mengembangkan website pemasaran bunga krisan menggunakan Laravel',
+    'Mengembangkan website desa sebagai media informasi dan digitalisasi desa',
+    'Berpartisipasi dalam program PPK Ormawa yang berhasil memperoleh pendanaan dan lolos seleksi nasional serta meraih penghargaan',
+  ],
+  tags: ['Laravel', 'PHP', 'ESP32', 'Arduino IDE', 'IoT', 'AI'],
+},
+
+  
+{
+  id: 'exp-3',
+  period: 'Pengalaman Freelance',
+  company: 'Proyek Website & Mobile App',
+  role: 'Full-Stack Developer',
+  locationType: 'Freelance',
+  description:
+    'Memiliki pengalaman mengembangkan website dan aplikasi mobile secara freelance. Terlibat dalam proses pengembangan aplikasi mulai dari implementasi antarmuka, pengelolaan data, hingga penerapan fitur sesuai kebutuhan proyek.',
+  achievements: [
+    'Mengembangkan website berdasarkan kebutuhan dan spesifikasi proyek',
+    'Mengembangkan aplikasi mobile menggunakan Flutter dan Dart',
+    'Mengimplementasikan fitur aplikasi dan mengelola integrasi dengan backend',
+    'Mengembangkan antarmuka website menggunakan teknologi web',
+    'Melakukan pengujian dan perbaikan untuk memastikan fungsionalitas aplikasi berjalan dengan baik',
+  ],
+  tags: [
+    'Flutter',
+    'Dart',
+    'PHP',
+    'Laravel',
+    'MySQL',
+    'HTML',
+    'CSS',
+    'JavaScript',
+  ],
+},
+
 ];
 
-export const ARCHITECTURE_LOGS: ArchitectureLog[] = [
-  {
-    id: 'log-1',
-    version: 'PRINSIP 01',
-    quote:
-      '"Aplikasi yang baik tidak hanya berjalan, tetapi juga membantu menyelesaikan masalah."',
-    explanation:
-      'Pengembangan aplikasi dimulai dengan memahami kebutuhan pengguna dan merancang fitur yang benar-benar bermanfaat, seperti pada aplikasi Musrenyuk.',
-    author: 'Prinsip Pengembangan Saya',
-  },
-  {
-    id: 'log-2',
-    version: 'PRINSIP 02',
-    quote:
-      '"Kode yang terstruktur memudahkan pengembangan dan pemeliharaan aplikasi."',
-    explanation:
-      'Pemisahan bagian aplikasi mobile, backend, dan database membantu menjaga struktur pengembangan agar lebih mudah dipahami dan dikembangkan.',
-    author: 'Prinsip Pengembangan Saya',
-  },
-  {
-    id: 'log-3',
-    version: 'PRINSIP 03',
-    quote:
-      '"Belajar dan mencoba adalah bagian dari proses menjadi developer."',
-    explanation:
-      'Melalui proyek akademik, program pengembangan kompetensi, dan pengalaman freelance, saya terus belajar menerapkan keterampilan pemrograman untuk membangun solusi digital.',
-    author: 'Prinsip Pengembangan Saya',
-  },
-];
+// // export const ARCHITECTURE_LOGS: ArchitectureLog[] = [
+// //   {
+// //     id: 'log-1',
+// //     version: 'PRINSIP 01',
+// //     quote:
+// //       '"Aplikasi yang baik tidak hanya berjalan, tetapi juga membantu menyelesaikan masalah."',
+// //     explanation:
+// //       'Pengembangan aplikasi dimulai dengan memahami kebutuhan pengguna dan merancang fitur yang benar-benar bermanfaat, seperti pada aplikasi Musrenyuk.',
+// //     author: 'Prinsip Pengembangan Saya',
+// //   },
+// //   {
+// //     id: 'log-2',
+// //     version: 'PRINSIP 02',
+// //     quote:
+// //       '"Kode yang terstruktur memudahkan pengembangan dan pemeliharaan aplikasi."',
+// //     explanation:
+// //       'Pemisahan bagian aplikasi mobile, backend, dan database membantu menjaga struktur pengembangan agar lebih mudah dipahami dan dikembangkan.',
+// //     author: 'Prinsip Pengembangan Saya',
+// //   },
+// //   {
+// //     id: 'log-3',
+// //     version: 'PRINSIP 03',
+// //     quote:
+// //       '"Belajar dan mencoba adalah bagian dari proses menjadi developer."',
+// //     explanation:
+// //       'Melalui proyek akademik, program pengembangan kompetensi, dan pengalaman freelance, saya terus belajar menerapkan keterampilan pemrograman untuk membangun solusi digital.',
+// //     author: 'Prinsip Pengembangan Saya',
+// //   },
+// ];
 

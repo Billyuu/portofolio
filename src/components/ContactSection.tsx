@@ -66,9 +66,15 @@ export const ContactSection: React.FC = () => {
           {/* Informasi Kontak */}
           <div className="lg:col-span-6 space-y-8">
             <div className="space-y-3">
-              <span className="font-mono text-xs text-zinc-400 uppercase tracking-[0.2em] font-semibold">
+              {/* <span className="font-mono text-xs text-zinc-400 uppercase tracking-[0.2em] font-semibold">
                 05 // HUBUNGI SAYA
+              </span> */}
+              <div className="mb-3 flex items-center gap-3">
+              <span className="h-px w-8 bg-zinc-900" />
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                04 / HUBUNGI SAYA
               </span>
+            </div>
 
               <h2 className="font-poppins font-bold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.1]">
                 PUNYA PELUANG

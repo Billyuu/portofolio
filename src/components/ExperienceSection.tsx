@@ -24,9 +24,12 @@ export const ExperienceSection: React.FC = () => {
         {/* Judul Bagian */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-zinc-200">
           <div>
-            <span className="font-mono text-xs uppercase tracking-widest text-zinc-500 font-semibold">
-              03 // PENGALAMAN
-            </span>
+            <div className="mb-3 flex items-center gap-3">
+              <span className="h-px w-8 bg-zinc-900" />
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                03 / PENGALAMAN
+              </span>
+            </div>
 
             <h2 className="font-poppins font-bold text-3xl sm:text-4xl text-black tracking-tight mt-2">
               Perjalanan dan Pengalaman Saya.
@@ -52,11 +55,13 @@ export const ExperienceSection: React.FC = () => {
                     : 'border-zinc-200 hover:border-zinc-400'
                 }`}
               >
-                <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
 
-                  {/* Informasi Pengalaman */}
-                  <div className="space-y-2 lg:max-w-xs shrink-0">
-                    <span className="font-mono text-xs text-black font-bold tracking-wider">
+                {/* GRID UTAMA */}
+                <div className="grid grid-cols-1 lg:grid-cols-[240px_minmax(0,1fr)] gap-6 lg:gap-8 items-start">
+
+                  {/* Kolom Kiri: Informasi Pengalaman */}
+                  <div className="min-w-0 space-y-2">
+                    <span className="block font-mono text-xs text-black font-bold tracking-wider">
                       {exp.period}
                     </span>
 
@@ -64,17 +69,21 @@ export const ExperienceSection: React.FC = () => {
                       {exp.company}
                     </h3>
 
-                    <p className="font-poppins text-sm text-zinc-600 font-medium">
+                    <p className="font-poppins text-sm text-zinc-600 font-medium leading-relaxed whitespace-pre-line">
                       {exp.role}
                     </p>
 
-                    <span className="inline-block mt-2 px-3 py-1 rounded-full border border-zinc-300 bg-zinc-100 text-black font-mono text-[11px] font-semibold">
-                      {exp.locationType}
-                    </span>
+                    <div className="pt-2">
+                      <span className="inline-block px-3 py-1 rounded-full border border-zinc-300 bg-zinc-100 text-black font-mono text-[11px] font-semibold">
+                        {exp.locationType}
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Deskripsi dan Rincian */}
-                  <div className="flex-1 space-y-4">
+                  {/* Kolom Kanan: Deskripsi dan Rincian */}
+                  <div className="min-w-0 flex flex-col gap-4">
+
+                    {/* Deskripsi */}
                     <p className="font-poppins font-normal text-zinc-700 text-sm sm:text-base leading-relaxed">
                       {exp.description}
                     </p>
@@ -101,7 +110,9 @@ export const ExperienceSection: React.FC = () => {
                     )}
 
                     {/* Teknologi dan Tombol Detail */}
-                    <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
+                    <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-2">
+
+                      {/* Teknologi */}
                       <div className="flex flex-wrap gap-2">
                         {exp.tags.map((tag) => (
                           <span
@@ -113,11 +124,12 @@ export const ExperienceSection: React.FC = () => {
                         ))}
                       </div>
 
+                      {/* Tombol Rincian */}
                       <button
                         type="button"
                         onClick={() => toggleExpand(exp.id)}
                         aria-expanded={isExpanded}
-                        className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-zinc-600 hover:text-black transition-colors"
+                        className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-zinc-600 hover:text-black transition-colors whitespace-nowrap shrink-0 sm:ml-auto"
                       >
                         <span>
                           {isExpanded
@@ -131,6 +143,7 @@ export const ExperienceSection: React.FC = () => {
                           <ChevronDown className="w-3.5 h-3.5" />
                         )}
                       </button>
+
                     </div>
                   </div>
                 </div>

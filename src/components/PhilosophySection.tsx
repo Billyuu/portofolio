@@ -5,6 +5,7 @@ import {
   Smartphone,
   Globe,
   Database,
+  Cpu,
   Info,
   X,
   ArrowUpRight,
@@ -35,6 +36,8 @@ export const PhilosophySection: React.FC = () => {
         return <Code2 className="h-4 w-4" aria-hidden="true" />;
       default:
         return <Info className="h-4 w-4" aria-hidden="true" />;
+        case 'iot':
+  return <Cpu className="h-4 w-4" aria-hidden="true" />;
     }
   };
 
@@ -58,16 +61,16 @@ export const PhilosophySection: React.FC = () => {
     >
       <div className="mx-auto w-full max-w-[1280px] space-y-10 px-4 sm:px-6 lg:space-y-12 lg:px-12">
         {/* Section heading */}
-        <div className="flex flex-col gap-5 border-b border-zinc-200 pb-6 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-5 border-b pt-5 border-zinc-200 pb-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <div className="mb-3 flex items-center gap-3">
               <span className="h-px w-8 bg-zinc-900" />
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                04 / Profil dan Keahlian
+                01 / Keahlian
               </span>
             </div>
             <h2 className="font-poppins text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-[2.75rem]">
-              Mengenal Saya dan Keahlian Saya.
+              Keahlian Saya.
             </h2>
             <p className="mt-4 max-w-xl font-poppins text-sm leading-7 text-zinc-600 sm:text-base">
               Ringkasan perjalanan belajar, pengalaman proyek, dan teknologi
@@ -86,7 +89,7 @@ export const PhilosophySection: React.FC = () => {
         </div>
 
         {/* Profile and information cards */}
-        <div className="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-12 lg:gap-6">
+        {/* <div className="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-12 lg:gap-6">
           <article className="flex flex-col rounded-3xl border border-zinc-200 bg-zinc-50 p-6 sm:p-8 lg:col-span-7 lg:p-9">
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
               Profil Saya
@@ -199,7 +202,7 @@ export const PhilosophySection: React.FC = () => {
               </div>
             </article>
           </div>
-        </div>
+        </div> */}
 
         {/* Skills */}
         <section className="rounded-3xl border border-zinc-200 bg-zinc-50 p-6 sm:p-8 lg:p-9">

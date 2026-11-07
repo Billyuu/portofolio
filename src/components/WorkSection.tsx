@@ -16,19 +16,25 @@ export const WorkSection: React.FC = () => {
       {/* Judul Bagian */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-zinc-800">
         <div>
-          <span className="font-mono text-xs uppercase tracking-widest text-zinc-400 font-semibold">
+          {/* <span className="font-mono text-xs uppercase tracking-widest text-zinc-400 font-semibold">
             02 // PROYEK PILIHAN
-          </span>
+          </span> */}
+          <div className="mb-3 flex items-center gap-3">
+              <span className="h-px w-8 bg-zinc-900" />
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                02 / PROYEK PILIHAN
+              </span>
+            </div>
 
           <h2 className="font-poppins font-bold text-3xl sm:text-5xl text-white tracking-tight mt-2">
-            Karya dan Proyek Saya.
+            Karya dan Proyek Unggulan Saya.
           </h2>
         </div>
 
-        <p className="font-poppins text-sm text-zinc-400 max-w-sm leading-relaxed">
+        {/* <p className="font-poppins text-sm text-zinc-400 max-w-sm leading-relaxed">
           Beberapa proyek yang menunjukkan pengalaman saya dalam
           mengembangkan aplikasi mobile, website, dan solusi digital.
-        </p>
+        </p> */}
       </div>
 
       {/* Daftar Proyek */}
